@@ -1438,6 +1438,10 @@ const level = {
 						z=[...x[1],x[2][0],x[2][1], 0.4,"\"rgba(255,0,0,1)\""]
 						return "level.toUpdate.push([level.hazard("+z.join(", ")+'), (x)=>{x.opticalQuery();x.draw();x.isOn = !(level.triggers["'+x[3]+'"])}]);'
 						break;
+					case 16:
+						z=[...x[1],x[2][0], x[3]]
+						return "spawn.debris("+z+");"
+						break;
 					default:
 					alert("You broke something, didn't you?")
 					break;
