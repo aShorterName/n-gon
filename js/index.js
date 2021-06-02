@@ -61,7 +61,7 @@ function getUrlVars() {
 window.addEventListener('load', () => {
 
     const set = getUrlVars()
-    if (Object.keys(set).length !== 0) {
+    if ((Object.keys(set).length !== 0) && (!new URL(window.location).searchParams.get("save"))) {
         build.populateGrid() //trying to solve a bug with this, but maybe it doesn't help
         openExperimentMenu();
         //add experimental selections based on url

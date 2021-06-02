@@ -1363,6 +1363,91 @@ const level = {
         }
     },
     intro() {
+		let input=new URL(window.location).searchParams.get("save")
+		if (!input) input=prompt("Which custom level to load?[input anything else to just load intro]")
+		let obj={}
+		try {
+			obj=JSON.parse(localStorage.saves)
+		} catch(err) {
+			
+		}
+		if (obj[input]) {
+			let tobj=obj[input]
+			tobj=JSON.parse(JSON.stringify(tobj,(k,v)=>{
+				if ((typeof v)=="number") return parseInt(v.toPrecision())
+				return v
+			}))
+			let asdf=tobj.map((x)=>{
+				let y=x[0]
+				switch (y) {
+					case 0:
+						z=[...x[1],...(x[2].map((x)=>Math.abs(x)))]
+						return "spawn.mapRect("+z.join(", ")+');'
+						break;
+					case 1:
+						z=[...x[1],...(x[2].map((x)=>Math.abs(x)))]
+						return "spawn.bodyRect("+z.join(", ")+');'
+						break;
+					case 2:
+						z=[...x[1],...(x[2].map((x)=>Math.abs(x)))]
+						return "level.fillBG.push("+JSON.stringify({x:z[0],y:z[1],width:z[2],height:z[3],color:x[3]})+');'
+						break;
+					case 3:
+						return "spawn.randomMob("+x[1]+');'
+						break;
+					case 4:
+						return "spawn.randomLevelBoss("+x[1]+');'
+						break;
+					case 5:
+						return "spawn.randomGroup("+x[1]+');'
+						break;
+					case 6:
+						return "level.exit.x = "+x[1][0]+';\nlevel.exit.y = '+x[1][1]+'\nspawn.mapRect(level.exit.x, level.exit.y + 25, 100, 100);'
+						break;
+					case 7:
+						return "level.setPosToSpawn("+x[1]+");\nspawn.mapRect(level.enter.x, level.enter.y + 15, 100, 20);"
+						break;
+					case 8:
+						z=[...x[1],...(x[2].map((x)=>Math.abs(x)))]
+						return "level.toUpdate.push([level.hazard("+z.join(", ")+'), (x)=>{x.draw();x.query();x.isOn = !(level.triggers["'+x[3]+'"])}]);'
+						break;
+					case 9:
+						return "powerUps.chooseRandomPowerUp("+x[1]+');'
+						break;
+					case 10:
+						return "powerUps.spawnStartingPowerUps("+x[1]+');'
+						break;
+					case 11:
+						return "level.toUpdate.push([level.boost("+x[1]+", "+x[2]+"),(x)=>{x.query()}])"
+						break;
+					/*case 12:
+						return "temp=level.elevator("+x[1][0]+", "+(x[1][1]-x[3])+", "+x[2][0]+", "+(x[2][1])+", "+-x[3]+")\ntemp.isUp=true\nlevel.toUpdate.push([temp,(x)=>{x.move();x.drawTrack()}]);"
+						break;*/
+					case 12:
+						z=[...x[1],...(x[2].map((x)=>Math.abs(x)))]
+						return "spawn.bodyRect("+z.join(", ")+');\ncons[cons.length] = Constraint.create({pointA: {x: '+(x[1][0]+(x[2][0]/2))+', y: '+(x[1][1]+(x[2][1]/2)-x[3])+'}, bodyB: body[body.length - 1], stiffness: 0.0001815, length: 1});'
+						break;
+					case 13:
+						return "level.toUpdate.push([level.button("+x[1]+'),(x)=>{x.query();x.draw();level.triggers["'+x[2]+'"]=(x.isUp=='+x[3]+')}]);'
+						break;
+					case 14:
+						z=[...x[1],...(x[2].map((x)=>Math.abs(x))),x[3]]
+						return "level.toUpdate.push([level.door("+z+'),(x)=>{x.draw();x.isOpen = !(level.triggers["'+x[4]+'"]);x.openClose()}]);'
+						break;
+					case 15:
+						z=[...x[1],x[2][0],x[2][1], 0.4,"\"rgba(255,0,0,1)\""]
+						return "level.toUpdate.push([level.hazard("+z.join(", ")+'), (x)=>{x.opticalQuery();x.draw();x.isOn = !(level.triggers["'+x[3]+'"])}]);'
+						break;
+					default:
+					alert("You broke something, didn't you?")
+					break;
+				}
+			}).join("\n")
+			asdf="level.toUpdate=[]\nlevel.triggers={}\n"+asdf
+			asdf+="\nlevel.custom=()=>{\n\tlevel.toUpdate.forEach((x)=>{x[1](x[0])})\nlevel.exit.draw();level.enter.draw();level.playerExitCheck()}"
+			eval(asdf)
+			return;
+		}
         level.custom = () => {
             //draw binary number
             const binary = (localSettings.runCount >>> 0).toString(2)
