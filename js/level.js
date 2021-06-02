@@ -1448,7 +1448,7 @@ const level = {
 				}
 			}).join("\n")
 			asdf="level.toUpdate=[]\nlevel.triggers={}\n"+asdf
-			asdf+="\nlevel.custom=()=>{\n\tlevel.toUpdate.forEach((x)=>{x[1](x[0])})\nlevel.exit.draw();level.enter.draw();level.playerExitCheck()}"
+			asdf+="\nlevel.custom=()=>{\n\tlevel.toUpdate.forEach((x)=>{x[1](x[0])})\nlevel.exit.draw();level.enter.draw();level.playerExitCheck()}\npowerUps.addResearchToLevel()"
 			eval(asdf)
 			return;
 		}
