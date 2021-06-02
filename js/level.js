@@ -1425,7 +1425,7 @@ const level = {
 						break;*/
 					case 12:
 						z=[...x[1],...(x[2].map((x)=>Math.abs(x)))]
-						return "spawn.bodyRect("+z.join(", ")+');\ncons[cons.length] = Constraint.create({pointA: {x: '+(x[1][0]+(x[2][0]/2))+', y: '+(x[1][1]+(x[2][1]/2)-x[3])+'}, bodyB: body[body.length - 1], stiffness: '+(x[4]??0.0001815)+', length: 1});'
+						return "spawn.bodyRect("+z.join(", ")+');\ncons[cons.length] = Constraint.create({pointA: {x: '+(x[1][0]+(x[2][0]/2))+', y: '+(x[1][1]+(x[2][1]/2)-x[3])+'}, bodyB: body[body.length - 1], stiffness: '+(x[4]??0.0001815)+', length: '+x[3]+'});\nWorld.add(engine.world, cons[cons.length-1])'
 						break;
 					case 13:
 						return "level.toUpdate.push([level.button("+x[1]+'),(x)=>{x.query();x.draw();level.triggers["'+x[2]+'"]=(x.isUp=='+x[3]+')}]);'
