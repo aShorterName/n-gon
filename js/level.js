@@ -1224,7 +1224,7 @@ const level = {
         // spawn.randomMob(2650, -975, 0.8);
         // spawn.randomGroup(1700, -900, 0.4);
         // if (simulation.difficulty > 3) spawn.randomLevelBoss(2200, -1300);
-        powerUps.addRerollToLevel() //needs to run after mobs are spawned
+        powerUps.addResearchToLevel() //needs to run after mobs are spawned
         // if (tech.isDuplicateBoss && Math.random() < 2 * tech.duplicationChance()) spawn.randomLevelBoss(4800, -500); 
     },
     final() {
@@ -1344,7 +1344,7 @@ const level = {
             if (simulation.difficulty * Math.random() > 10 * i) spawn.randomGroup(3500 + 500 * (Math.random() - 0.5), -800 + 200 * (Math.random() - 0.5), Infinity);
             if (simulation.difficulty * Math.random() > 7 * i) spawn.randomGroup(5000 + 500 * (Math.random() - 0.5), -800 + 200 * (Math.random() - 0.5), Infinity);
         }
-        powerUps.addRerollToLevel() //needs to run after mobs are spawned
+        powerUps.addResearchToLevel() //needs to run after mobs are spawned
         if (tech.isDuplicateBoss && Math.random() < 2 * tech.duplicationChance()) spawn.randomLevelBoss(4125, -350);
 
         if (simulation.isHorizontalFlipped) { //flip the map horizontally
@@ -1852,7 +1852,7 @@ const level = {
                 spawn.randomLevelBoss(675, -2775, ["shooterBoss", "launcherBoss", "laserTargetingBoss", "streamBoss", "shieldingBoss", "pulsarBoss"]);
             }
         }
-        powerUps.addRerollToLevel() //needs to run after mobs are spawned
+        powerUps.addResearchToLevel() //needs to run after mobs are spawned
         if (tech.isDuplicateBoss && Math.random() < 2 * tech.duplicationChance()) spawn.randomLevelBoss(1925, -1250);
 
 
@@ -2057,7 +2057,7 @@ const level = {
         spawn.randomMob(4100, 1225, 0.9);
         spawn.randomMob(2825, 400, 0.9);
         if (simulation.difficulty > 3) spawn.randomLevelBoss(6000, 2300, ["spiderBoss", "launcherBoss", "laserTargetingBoss", "streamBoss", "historyBoss", "orbitalBoss", "shieldingBoss"]);
-        powerUps.addRerollToLevel() //needs to run after mobs are spawned
+        powerUps.addResearchToLevel() //needs to run after mobs are spawned
         if (tech.isDuplicateBoss && Math.random() < 2 * tech.duplicationChance()) spawn.randomLevelBoss(7725, 2275);
 
 
@@ -2245,7 +2245,7 @@ const level = {
                 spawn.laserBoss(600 + 200 * Math.random(), -2150 + 250 * Math.random());
             }
         }
-        powerUps.addRerollToLevel() //needs to run after mobs are spawned
+        powerUps.addResearchToLevel() //needs to run after mobs are spawned
         if (tech.isDuplicateBoss && Math.random() < 2 * tech.duplicationChance()) spawn.randomLevelBoss(3950, -850);
 
         if (simulation.isHorizontalFlipped) { //flip the map horizontally
@@ -2416,7 +2416,7 @@ const level = {
         spawn.randomGroup(2225, -1325, 0.4);
         spawn.randomGroup(4900, -1200, 0);
         if (simulation.difficulty > 3) spawn.randomLevelBoss(3200, -1900);
-        powerUps.addRerollToLevel() //needs to run after mobs are spawned
+        powerUps.addResearchToLevel() //needs to run after mobs are spawned
         if (tech.isDuplicateBoss && Math.random() < 2 * tech.duplicationChance()) spawn.randomLevelBoss(2175, -2425);
 
         if (simulation.isHorizontalFlipped) { //flip the map horizontally
@@ -2633,7 +2633,7 @@ const level = {
                 spawn.suckerBoss(4500, -400);
             }
         }
-        powerUps.addRerollToLevel() //needs to run after mobs are spawned
+        powerUps.addResearchToLevel() //needs to run after mobs are spawned
         if (tech.isDuplicateBoss && Math.random() < 2 * tech.duplicationChance()) spawn.randomLevelBoss(5350, -325);
 
         if (simulation.isHorizontalFlipped) { //flip the map horizontally
@@ -2801,7 +2801,7 @@ const level = {
         spawn.randomGroup(3700, -1500, 0.4);
         spawn.randomGroup(1700, -900, 0.4);
         if (simulation.difficulty > 3) spawn.randomLevelBoss(2600, -2300);
-        powerUps.addRerollToLevel() //needs to run after mobs are spawned
+        powerUps.addResearchToLevel() //needs to run after mobs are spawned
         if (tech.isDuplicateBoss && Math.random() < 2 * tech.duplicationChance()) spawn.randomLevelBoss(3075, -2050);
 
         if (simulation.isHorizontalFlipped) { //flip the map horizontally
@@ -3032,7 +3032,7 @@ const level = {
         spawn.randomGroup(-2450, -1100, 0);
 
         if (simulation.difficulty > 3) spawn.randomLevelBoss(-2400, -3000);
-        powerUps.addRerollToLevel() //needs to run after mobs are spawned
+        powerUps.addResearchToLevel() //needs to run after mobs are spawned
         if (tech.isDuplicateBoss && Math.random() < 2 * tech.duplicationChance()) spawn.randomLevelBoss(-1825, -1975);
 
         if (simulation.isHorizontalFlipped) { //flip the map horizontally
@@ -3340,7 +3340,7 @@ const level = {
             }
         }
         if (tech.isDuplicateBoss && Math.random() < 2 * tech.duplicationChance()) spawn.randomLevelBoss(300, -800);
-        powerUps.addRerollToLevel() //needs to run after mobs are spawned
+        powerUps.addResearchToLevel() //needs to run after mobs are spawned
 
         if (simulation.isHorizontalFlipped) { //flip the map horizontally
             level.flipHorizontal(); //only flips map,body,mob,powerUp,cons,consBB, exit
@@ -3570,7 +3570,7 @@ const level = {
                 spawn.randomLevelBoss(2200, -450)
             }
         }
-        powerUps.addRerollToLevel() //needs to run after mobs are spawned
+        powerUps.addResearchToLevel() //needs to run after mobs are spawned
         if (tech.isDuplicateBoss && Math.random() < 2 * tech.duplicationChance()) spawn.randomLevelBoss(1875, -675);
 
         if (simulation.isHorizontalFlipped) { //flip the map horizontally
@@ -3783,7 +3783,7 @@ const level = {
         spawn.randomGroup(100, -450, 0.9);
 
         if (simulation.difficulty > 3) spawn.randomLevelBoss(1850, -1400);
-        powerUps.addRerollToLevel() //needs to run after mobs are spawned
+        powerUps.addResearchToLevel() //needs to run after mobs are spawned
     },
     basement() { // player made level  by    Francois 👑 from discord
         let button, door, buttonDoor, buttonPlateformEnd, doorPlateform
@@ -4054,7 +4054,7 @@ const level = {
         spawn.randomGroup(2980, -400, 0.3);
         spawn.randomGroup(5750, -3860, 0.4);
         spawn.randomGroup(1130, 1300, 0.1);
-        powerUps.addRerollToLevel() //needs to run after mobs are spawned
+        powerUps.addResearchToLevel() //needs to run after mobs are spawned
         powerUps.spawn(1900, -940, "heal");
         powerUps.spawn(3000, -230, "heal");
         powerUps.spawn(5450, -3675, "ammo");
@@ -5053,7 +5053,7 @@ const level = {
                 spawn.randomLevelBoss(-300, -3200, ["shooterBoss", "launcherBoss", "laserTargetingBoss", "streamBoss", "shieldingBoss", "pulsarBoss", "laserBoss"]);
             }
         }
-        powerUps.addRerollToLevel() //needs to run after mobs are spawned
+        powerUps.addResearchToLevel() //needs to run after mobs are spawned
         if (tech.isDuplicateBoss && Math.random() < 2 * tech.duplicationChance()) spawn.randomLevelBoss(7725, 2275);
     },
     coliseum() {
@@ -5203,7 +5203,7 @@ const level = {
         powerUps.spawn(200, 50, "ammo");
         powerUps.spawn(200, 50, "ammo");
 
-        powerUps.addRerollToLevel() //needs to run after mobs are spawned
+        powerUps.addResearchToLevel() //needs to run after mobs are spawned
 
         if (tech.isDuplicateBoss && Math.random() < 2 * tech.duplicationChance()) spawn.randomLevelBoss(6600, 600, ["historyBoss", "powerUpBoss", "pulsarBoss", "orbitalBoss"]);
     },
@@ -5350,7 +5350,7 @@ const level = {
         powerUps.chooseRandomPowerUp(4006, 400);
         powerUps.chooseRandomPowerUp(4407, 400);
         powerUps.chooseRandomPowerUp(4409, 400);
-        powerUps.addRerollToLevel(); //needs to run after mobs are spawned
+        powerUps.addResearchToLevel(); //needs to run after mobs are spawned
 
         //Block Spawning
         // spawn.bodyRect(-100, 200, 100, 400); //spawn door
@@ -5551,7 +5551,7 @@ const level = {
         spawn.randomGroup(3000, -450, 0.3)
         spawn.randomGroup(6000, -2700, 0)
         spawn.randomGroup(-1200, -1300, -0.3)
-        powerUps.addRerollToLevel()
+        powerUps.addResearchToLevel()
 
         if (simulation.difficulty > 3) {
             spawn.randomLevelBoss(1900, 400, ["shieldingBoss", "shooterBoss", "launcherBoss", "streamBoss"])
@@ -6055,7 +6055,7 @@ const level = {
         //top right
         spawn.randomGroup(2000, -5700, 0.6);
 
-        powerUps.addRerollToLevel() //needs to run after mobs are spawned
+        powerUps.addResearchToLevel() //needs to run after mobs are spawned
         let bosses = ["shooterBoss", "launcherBoss", "laserTargetingBoss", "streamBoss", "pulsarBoss", "spawnerBossCulture", "laserBoss"];
         let abc = Math.random();
         if (simulation.difficulty > 3) {
